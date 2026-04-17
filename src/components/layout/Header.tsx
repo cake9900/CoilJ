@@ -19,7 +19,7 @@ export function Header() {
           <div className="flex items-center justify-between gap-4">
             <a href="#" className="flex min-w-0 items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-950/10 bg-slate-950 text-sm font-bold uppercase tracking-[0.2em] text-[#f5efe4]">
-                GA
+                ZH
               </span>
               <span className="truncate text-sm font-semibold uppercase tracking-[0.22em] text-slate-900">
                 {personalInfo.name}
