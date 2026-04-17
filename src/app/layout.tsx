@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   keywords: ['frontend', 'react', 'nextjs', 'typescript', 'portfolio'],
   authors: [{ name: 'Глеб Алексеевич' }],
   openGraph: {
-    title: 'Глеб Алексеевич | FullStack Developer',
+    title: 'Холодок | FullStack Developer',
     description: 'Портфолио FullStack-разработчика',
     type: 'website',
     locale: 'ru_RU',
