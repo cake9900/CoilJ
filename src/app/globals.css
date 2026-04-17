@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    
+    /* 🎨 Новая палитра (меняйте только эти значения) */
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent: #7c3aed;
+    --accent-hover: #6d28d9;
+    --border: #e2e8f0;
+    --grid: rgba(15, 23, 42, 0.04);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(circle at 20% 0%, rgba(124, 58, 237, 0.08), transparent 45%),
+      linear-gradient(135deg, var(--bg-main) 0%, #f1f5f9 50%, #e2e8f0 100%);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.3;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 92%);
+  }
+
+  ::selection {
+    @apply bg-violet-200 text-violet-900;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .heading-1 {
+    @apply text-4xl font-bold uppercase tracking-[-0.05em] md:text-5xl lg:text-6xl;
+    color: var(--text-main);
+  }
+
+  .heading-2 {
+    @apply text-[1.9rem] font-bold uppercase tracking-[-0.04em] md:text-4xl;
+    color: var(--text-main);
+  }
+
+  .heading-3 {
+    @apply text-xl font-semibold tracking-[-0.03em] md:text-[1.7rem];
+    color: #1e293b;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border bg-violet-700 px-6 py-3 text-sm font-medium uppercase tracking-[0.18em] text-white;
+    @apply hover:-translate-y-0.5 hover:bg-violet-800 hover:border-violet-800;
+    @apply focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-[var(--bg-main)];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-6 py-3 text-sm font-medium uppercase tracking-[0.18em] text-slate-700 backdrop-blur;
+    @apply hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white;
+  }
+
+  .card {
+    @apply rounded-[2rem] border border-slate-200/80 bg-white/85 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-sm;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-500;
+  }
+
+  .section-shell {
+    @apply relative overflow-hidden rounded-[2.25rem] border border-white/70 bg-white/65 shadow-[0_24px_80px_rgba(15,23,42,0.06)] backdrop-blur-sm;
+  }
+
+  .section-intro {
+    @apply mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between;
+  }
+
+  .muted {
+    color: var(--text-muted);
+  }
+
+  .input-field {
+    @apply w-full rounded-[1.4rem] border border-slate-200 bg-white px-5 py-4 text-slate-900 placeholder:text-slate-400;
+    @apply focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-100;
+  }
+
+  .glow-card {
+    @apply relative overflow-hidden;
+  }
+
+  .glow-card::before {
+    content: '';
+    position: absolute;
+    inset: auto auto -35% -10%;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  .float-card {
+    animation: floatCard 9s ease-in-out infinite;
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
