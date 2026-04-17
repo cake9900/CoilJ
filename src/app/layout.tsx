@@ -10,7 +10,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Глеб Алексеевич | FullStack Developer',
+  title: 'Холодов Евгений | FullStack Developer',
   description: 'Портфолио FullStack-разработчика. Проекты на React, Next.js и TypeScript.',
   keywords: ['frontend', 'react', 'nextjs', 'typescript', 'portfolio'],
   authors: [{ name: 'Глеб Алексеевич' }],
